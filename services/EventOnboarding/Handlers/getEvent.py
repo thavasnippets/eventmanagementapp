@@ -1,4 +1,4 @@
-import layers.Common_layer.python.constants as constants
+import constants
 from aws_lambda_powertools import Logger, Tracer
 from boto3.dynamodb.conditions import Attr, Key
 from dynamodb.dynamodbhelper import dynamodbhelper

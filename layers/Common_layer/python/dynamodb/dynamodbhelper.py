@@ -36,7 +36,7 @@ class dynamodbhelper:
                     response_items.extend(response['Items'])
             return response_items
         except Exception as err:
-            logger.exception(error)
+            logger.exception(err)
             raise Exception(f"Scan failed:{self.table_name}") from err
 
     @tracer.capture_method
@@ -51,7 +51,7 @@ class dynamodbhelper:
                     response_items.extend(response['Items'])
             return response_items
         except Exception as err:
-            logger.exception(error)
+            logger.exception(err)
             raise Exception(f"Query failed:{self.table_name}") from err
 
     @tracer.capture_method
@@ -60,7 +60,7 @@ class dynamodbhelper:
             response_table = self.table.get_item(**params)
             return response_table['Item'] if 'Item' in response_table else None
         except Exception as err:
-            logger.exception(error)
+            logger.exception(err)
             raise Exception(
                 f"Get data failed:{self.table_name} for key:{params}") from err
 
@@ -70,7 +70,7 @@ class dynamodbhelper:
             response_table = self.table.put_item(**params)
             return response_table
         except Exception as err:
-            logger.exception(error)
+            logger.exception(err)
             raise Exception(
                 f"Put data failed:{self.table_name} for key:{params}") from err
 
@@ -80,7 +80,7 @@ class dynamodbhelper:
             response_table = self.table.update_item(**params)
             return response_table
         except Exception as err:
-            logger.exception(error)
+            logger.exception(err)
             raise Exception(
                 f"update data failed:{self.table_name} for key:{params}") from err
 
@@ -96,7 +96,7 @@ class dynamodbhelper:
             response_table = self.table.put_item(inputData)
             return response_table
         except Exception as err:
-            logger.exception(error)
+            logger.exception(err)
             raise Exception(
                 f"update data failed:{self.table_name} for key:{params}") from err
 
@@ -106,6 +106,6 @@ class dynamodbhelper:
             self.table.delete_item(**params)
             return True
         except Exception as err:
-            logger.exception(error)
+            logger.exception(err)
             raise Exception(
                 f"delete data failed:{self.table_name} for key:{params}") from err

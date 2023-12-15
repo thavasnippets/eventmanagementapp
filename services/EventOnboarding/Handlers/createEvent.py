@@ -3,7 +3,7 @@ from boto3.dynamodb.conditions import Attr, Key
 from dynamodb.dynamodbhelper import dynamodbhelper
 from common_utils import create_unique_id
 from date_utils import get_current_datetime
-import layers.Common_layer.python.constants as constants
+import constants
 tracer = Tracer()
 logger = Logger()
 

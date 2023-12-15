@@ -2,7 +2,7 @@ from aws_lambda_powertools import Logger, Tracer
 from boto3.dynamodb.conditions import Attr, Key
 from dynamodb.dynamodbhelper import dynamodbhelper
 from date_utils import get_current_datetime
-import layers.Common_layer.python.constants as constants
+import constants
 tracer = Tracer()
 logger = Logger()
 
