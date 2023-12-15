@@ -90,8 +90,9 @@ class dynamodbhelper:
             inputData = response_table = self.table.get_item(Key=params["Key"])
             updateData = params["Item"]
             if inputData is not None and inputData.item_count == 1:
-                for key, val in inputData.items():
-                    inputData[key] = updateData[key]
+                for key, val in updateData.items():
+                    if key in inputData:
+                        inputData[key] = val
             response_table = self.table.put_item(inputData)
             return response_table
         except Exception as err:

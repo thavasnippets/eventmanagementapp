@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "a706b9f6-a90c-4ea1-a1f0-11e9982a916f",
+		"name": "eventOrg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7236576"
+	},
+	"item": [
+		{
+			"name": "eventonboarding",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"sample Event 1\",\n    \"description\": \"Created for sample event\",\n    \"tag\": \"event swag\",\n    \"organiser\": {\n        \"name\": \"test user\",\n        \"email\": \"testuser@xyz.com\",\n        \"phone\": \"1234567890\"\n    },\n    \"tollfree\": \"0123456789\",\n    \"helpdeskemail\": \"helpdesk@sampleevent1.com\",\n    \"address\": {\n        \"line1\": \"yark Lane, 256\",\n        \"line2\": \"nest Avenue\",\n        \"city\": \"Blore\",\n        \"country\": \"india\",\n        \"pin\": \"xy0191\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/eventonboarding/event",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"eventonboarding",
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEvent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/eventonboarding/event?name=Sample event 1 ",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"eventonboarding",
+								"event"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1111",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Sample event 1 "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Created for sample event\",\n    \"tag\": \"event swag\",\n    \"organiser\": {\n        \"name\": \"test user\",\n        \"email\": \"testuser@xyz.com\",\n        \"phone\": \"1234567890\"\n    },\n    \"tollfree\": \"0123456789\",\n    \"helpdeskemail\": \"helpdesk@sampleevent1.com\",\n    \"address\": {\n        \"line1\": \"yark Lane, 256\",\n        \"line2\": \"nest Avenue\",\n        \"city\": \"Blore\",\n        \"country\": \"india\",\n        \"pin\": \"xy0191\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventonboarding/event/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventonboarding",
+								"event",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/eventonboarding/event/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventonboarding",
+								"event",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{x-api-key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "test",
+			"type": "string"
+		},
+		{
+			"key": "x-api-key",
+			"value": "test",
+			"type": "string"
+		}
+	]
+}

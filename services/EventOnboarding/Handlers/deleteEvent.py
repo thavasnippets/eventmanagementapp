@@ -2,7 +2,7 @@ from aws_lambda_powertools import Logger, Tracer
 from boto3.dynamodb.conditions import Attr, Key
 from dynamodb.dynamodbhelper import dynamodbhelper
 from date_utils import get_current_datetime
-import constants
+import layers.Common_layer.python.constants as constants
 tracer = Tracer()
 logger = Logger()
 
@@ -14,7 +14,7 @@ def delete_event(id):
     if payload:
         payload[constants.COL_UPDATED_ON] = get_current_datetime()
         payload[constants.COL_IS_DELETED] = True
-        event_table.update(Item=payload)
+        event_table.put(Item=payload)
         return {"data": "Success"}, 200
 
     else:

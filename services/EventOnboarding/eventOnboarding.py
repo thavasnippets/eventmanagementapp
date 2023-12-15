@@ -14,7 +14,7 @@ logger = Logger()
 router = Router()
 
 
-@router.post('/eventonboarding')
+@router.post('/eventonboarding/event')
 def create_event():
     try:
         try:
@@ -38,7 +38,7 @@ def create_event():
         )
 
 
-@router.delete('/eventonboarding/{id}')
+@router.delete('/eventonboarding/event/<id>')
 def delete_event(id):
     try:
         response, status_code = deleteEvent.delete_event(
@@ -55,7 +55,7 @@ def delete_event(id):
         )
 
 
-@router.get('/leventonboarding')
+@router.get('/eventonboarding/event')
 def get_event():
     try:
         id = router.current_event.get_query_string_value(
@@ -79,7 +79,7 @@ def get_event():
         )
 
 
-@router.put('/eventonboarding/{id}')
+@router.put('/eventonboarding/event/<id>')
 def update_event(id):
     try:
         try:
