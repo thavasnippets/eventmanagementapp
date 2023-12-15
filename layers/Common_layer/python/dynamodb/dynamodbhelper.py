@@ -1,7 +1,5 @@
 from logging import error
 from aws_lambda_powertools import Logger, Tracer
-from aws_lambda_powertools import Logger, Tracer
-from aws_lambda_powertools import Logger, Tracer
 import boto3
 
 tracer = Tracer()
