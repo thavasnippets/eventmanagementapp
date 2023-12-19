@@ -1,0 +1,22 @@
+#set($currentDateTimeISO = $util.time.nowISO8601())
+#set($inputPath = $input.path('$'))
+
+#set($event_action: $input.body.event_action)
+
+#set($newJsonObject = {
+  "task": "$input.body.task_name",
+  "updated_on": $currentDateTimeISO,
+  "updated_by": $input.body.updated_by
+})
+
+{
+  "TableName": "YourDynamoDBTableName",
+  "Key": {
+    "id": {"S": "$input.path('$.id')"}
+  },
+  "UpdateExpression": "SET checkins = list_append(checkins :newJsonObject)",
+  "ExpressionAttributeValues": {
+    ":newJsonObject": {"L": [{"M": $util.escapeJavaScript($util.toJson($newJsonObject))}]}
+  },
+  "ReturnValues": "ALL_NEW"
+}

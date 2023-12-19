@@ -1,0 +1,26 @@
+#set($uuid = $util.autoId())
+#set($currentDateTimeISO = $util.time.nowISO8601())
+#set($inputPath = $input.path('$'))
+{
+  "TableName": "UserTable",
+  "Item": {
+    "id": {"S": "$uuid"},
+    "first_name": {"S": "$input.body.first_name"},
+    "last_name": {"S": "$input.body.last_name"},
+    "event_id": {"S": "$input.params('event_id')"},
+    "country": {"S": "$input.body.country"},
+    "city": {"S": "$input.body.city"},
+    "pin": {"S": "$input.body.pin"},
+    "phone": {"S": "$input.body.phone"},
+    "email": {"S": "$input.body.email"},
+    "intrestfor": {"S": "$input.body.intrestfor"},
+    "job_title": {"S": "$input.body.job_title"},
+    "company_name": {"S": "$input.body.company_name"},
+    "industry": {"S": "$input.body.industry"},
+    "company_type": {"S": "$input.body.company_type"},
+    "company_size": {"S": "$input.body.company_size"},
+    "created_on": {"S": "$currentDateTimeISO"},
+    "updated_on": {"S": "$currentDateTimeISO"},
+    "is_deleted": {"NULL": false}
+  }
+}

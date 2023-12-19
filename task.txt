@@ -1,0 +1,43 @@
+//create event payload
+{
+        "name": "event_name_1",
+        "description": "testing event",
+        "tag": "AI testing ",
+        "organiser": {
+                "name": "testuser",
+                "email": "testuser@email.com",
+                "phone": "1234567890"
+        },
+        "tollfree": "0123456789",
+        "helpdeskemail": "helpdeskemail@event1.com",
+        "address": {
+                "line1": "lane1",
+                "line2": "Park Avneue",
+                "city": "Bengalore",
+                "country": "India",
+                "pin": "562125"
+        }
+}
+//create event payload
+{
+        "first_name": "user1",
+        "last_name": "user1 last name",
+        "country": "India",
+        "city": "bengalore",
+        "pin": "8383883",
+        "phone": "93939399",
+        "email": "aaa@gmail.com",
+        "password": "rest0000",
+        "intrestfor": "business/persnoal",
+        "job_title": "Arch",
+        "company_name": "Test",
+        "industry": "IT",
+        "company_type": "ENter",
+        "company_size": ">100"
+}
+
+-- get, post
+event day---
+{
+        "userid"
+}

@@ -1,0 +1,64 @@
+{
+    "type": "object",
+    "properties": {
+        "first_name": {
+            "type": "string"
+        },
+        "last_name": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "pin": {
+            "type": "string"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string",
+            "pattern": "^\\S+@\\S+\\.\\S+$",
+            "format": "email",
+            "minLength": 6,
+            "maxLength": 127
+        },
+        "intrestfor": {
+            "type": "string"
+        },
+        "job_title": {
+            "type": "string"
+        },
+        "company_name": {
+            "type": "string"
+        },
+        "industry": {
+            "type": "string"
+        },
+        "company_type": {
+            "type": "string"
+        },
+        "company_size": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "first_name",
+        "last_name",
+        "country",
+        "city",
+        "pin",
+        "phone",
+        "email",
+        "password",
+        "intrestfor",
+        "job_title",
+        "company_name",
+        "industry",
+        "company_type",
+        "company_size"
+    ]
+}

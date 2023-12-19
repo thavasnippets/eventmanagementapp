@@ -1,0 +1,12 @@
+#set($inputRoot = $input.path('$'))
+{
+  "TableName": "ddb_usr_dtls",
+  "Key": {
+    "event_id": {
+      "S": "$input.params('event_id')"
+    },
+    "id": {
+      "S": "$input.params('user_id')"
+    }
+  }
+}

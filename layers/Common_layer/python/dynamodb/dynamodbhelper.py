@@ -91,7 +91,7 @@ class dynamodbhelper:
                 for key, val in updateData.items():
                     if key in inputData:
                         inputData[key] = val
-            response_table = self.table.put_item(inputData)
+            response_table = self.table.put_item(Item=inputData)
             return response_table
         except Exception as err:
             logger.exception(err)
